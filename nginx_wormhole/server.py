@@ -2,11 +2,9 @@ import asyncio
 import asyncssh
 import logging
 import os
-import re
 
 from . import envconf
-
-VALID_SERVICE_NAMES = re.compile(r'^[a-z0-9][a-z0-9]{,62}')
+from .common import VALID_SERVICE_NAMES
 
 conf = envconf.EnvConf(
 	NW_LISTEN_HOST = (str, 'localhost'),

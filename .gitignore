@@ -1,2 +1,4 @@
 server_id_ed25519
 authorized_keys_*
+nginx_wormhole.egg-info/
+**/__pycache__/
