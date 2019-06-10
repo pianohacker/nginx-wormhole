@@ -112,7 +112,7 @@ async def update_nginx_conf(service_name):
 	}}
 }}
 
-upstream {{
+upstream nginx_wormhole_{service_name.replace("-", "_")}_upstream {{
 """)
 		for port in service_remote_ports[service_name]:
 			service_conf.write(f"	server localhost:{port};\n")
