@@ -95,11 +95,11 @@ service_remote_ports = collections.defaultdict(lambda: set())
 
 async def update_nginx_conf(service_name):
 	if not service_remote_ports[service_name]:
-		os.unlink(os.path.join(conf.NW_NGINX_DIRECTORY, f'{service_name}.conf'))
+		os.unlink(os.path.join(conf.NW_NGINX_DIRECTORY, f'service-{service_name}.conf'))
 		return
 
 	with open(
-		os.path.join(conf.NW_NGINX_DIRECTORY, f'{service_name}.conf'),
+		os.path.join(conf.NW_NGINX_DIRECTORY, f'service-{service_name}.conf'),
 		'w',
 		encoding = 'utf-8',
 	) as service_conf:
